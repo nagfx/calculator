@@ -71,7 +71,7 @@ export default {
       } else if (str.includes("*")) {
         output = Number(str.split("*")[0]) * Number(str.split("*")[1]);
       } else {
-        output = Number(str.split("%")[0]) - Number(str.split("%")[1]);
+        output = Number(str.split("%")[0]) % Number(str.split("%")[1]);
       }
       return output.toString();
     },
