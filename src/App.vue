@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto h-[100vh]">
-    <div class="w-72 h-80 bg-slate-600">
+    <div class="w-72 pb-5 bg-slate-600">
       <h1 id="currentValue">{{ currentValue }}</h1>
       <div class="pl-6 pt-3">
         <button
@@ -12,7 +12,15 @@
         </button>
         <button
           v-for="(method, key) in methods"
-          @click="method !== '=' ? append(method) : calculate()"
+          @click="
+            if (method === 'C') {
+              clearNumber();
+            } else if (method !== '=') {
+              append(method);
+            } else {
+              calculate();
+            }
+          "
           :disabled="currentValue.length === 0"
           :key="key"
         >
@@ -32,7 +40,7 @@ export default {
     return {
       currentValue: "",
       numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      methods: ["+", "-", "/", "*", "=", "%"],
+      methods: ["+", "-", "/", "*", "=", "%", "C"],
     };
   },
   methods: {
@@ -47,6 +55,9 @@ export default {
     calculate() {
       let convertedNumber = this.convert(this.currentValue);
       this.currentValue = convertedNumber;
+    },
+    clearNumber() {
+      this.currentValue = "";
     },
     convert(str) {
       let output;
