@@ -1,5 +1,7 @@
 # calculator
 
+Calculator built in VUE and Tailwind CSS and custom CSS, will need to add a clear function later.
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
