@@ -1,5 +1,8 @@
 # calculator
 
+Deployed here https://stalwart-piroshki-4b3696.netlify.app/
+Currently allows calculations between two values only.
+
 Calculator built in VUE and Tailwind CSS and custom CSS, will need to add a clear function later.
 
 This template should help get you started developing with Vue 3 in Vite.
